@@ -3,6 +3,11 @@ import {
 } from 'angular2/core';
 import {NgFor, ControlValueAccessor, NgModel} from 'angular2/common';
 
+import {global} from 'angular2/src/facade/lang';
+/* tslint:disable */
+const KeyboardEvent = (global as any).KeyboardEvent as KeyboardEvent;
+/* tslint:enable */
+
 @Component({
   /* tslint:disable */
   selector: 'rating[ngModel]',
@@ -10,14 +15,14 @@ import {NgFor, ControlValueAccessor, NgModel} from 'angular2/common';
   directives: [NgFor],
   template: `
     <span (mouseleave)="reset()" (keydown)="onKeydown($event)" tabindex="0" role="slider" aria-valuemin="0" [attr.aria-valuemax]="range.length" [attr.aria-valuenow]="value">
-      <template ngFor #r [ngForOf]="range" #index="index">
+      <template ngFor let-r [ngForOf]="range" #index="index">
         <span class="sr-only">({{ index < value ? '*' : ' ' }})</span>
         <i (mouseenter)="enter(index + 1)" (click)="rate(index + 1)" class="glyphicon" [ngClass]="index < value ? r.stateOn : r.stateOff" [title]="r.title" ></i>
       </template>
     </span>
   `
 })
-export class Rating implements ControlValueAccessor, OnInit {
+export class RatingComponent implements ControlValueAccessor, OnInit {
   @Input() public max:number;
   @Input() public stateOn:string;
   @Input() public stateOff:string;

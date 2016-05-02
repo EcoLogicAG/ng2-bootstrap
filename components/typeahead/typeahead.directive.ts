@@ -4,8 +4,13 @@ import {
 } from 'angular2/core';
 import {NgModel} from 'angular2/common';
 import {TypeaheadUtils} from './typeahead-utils';
-import {TypeaheadContainer} from './typeahead-container.component';
+import {TypeaheadContainerComponent} from './typeahead-container.component';
 import {TypeaheadOptions} from './typeahead-options.class';
+
+import {global} from 'angular2/src/facade/lang';
+/* tslint:disable */
+const KeyboardEvent = (global as any).KeyboardEvent as KeyboardEvent;
+/* tslint:enable */
 
 // https://github.com/angular/angular/blob/master/modules/angular2/src/core/forms/directives/shared.ts
 function setProperty(renderer:Renderer, elementRef:ElementRef, propName:string, propValue:any):void {
@@ -15,7 +20,7 @@ function setProperty(renderer:Renderer, elementRef:ElementRef, propName:string, 
 @Directive({
   selector: '[typeahead][ngModel]'
 })
-export class Typeahead implements OnInit {
+export class TypeaheadDirective implements OnInit {
   @Output() public typeaheadLoading:EventEmitter<boolean> = new EventEmitter(false);
   @Output() public typeaheadNoResults:EventEmitter<boolean> = new EventEmitter(false);
   @Output() public typeaheadOnSelect:EventEmitter<{item:any}> = new EventEmitter(false);
@@ -40,7 +45,7 @@ export class Typeahead implements OnInit {
   // @Input() private typeaheadSelectOnBlur:boolean;
   // @Input() private typeaheadFocusOnSelect:boolean;
 
-  public container:TypeaheadContainer;
+  public container:TypeaheadContainerComponent;
   public isTypeaheadOptionsListActive:boolean = false;
 
   private debouncer:Function;
@@ -214,7 +219,7 @@ export class Typeahead implements OnInit {
     ]);
 
     this.popup = this.loader
-      .loadNextToLocation(TypeaheadContainer, this.viewContainerRef, binding)
+      .loadNextToLocation(TypeaheadContainerComponent, this.viewContainerRef, binding)
       .then((componentRef:ComponentRef) => {
         componentRef.instance.position(this.viewContainerRef.element);
         this.container = componentRef.instance;

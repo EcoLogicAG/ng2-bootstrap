@@ -1,6 +1,6 @@
 {
   "name": "ng2-bootstrap",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "angular2 bootstrap components",
   "scripts": {
     "flow.install:typings": "./node_modules/.bin/typings install",
@@ -50,13 +50,14 @@
     "moment": "2.13.0"
   },
   "peerDependencies": {
-    "angular2": "2.0.0-beta.16"
+    "angular2": "2.0.0-beta.17"
   },
   "devDependencies": {
-    "angular2": "2.0.0-beta.16",
+    "angular2": "2.0.0-beta.17",
     "async": "1.5.2",
     "balanced-match": "0.4.0",
     "bootstrap": "3.3.6",
+    "codecov": "1.0.1",
     "compression-webpack-plugin": "0.3.1",
     "conventional-changelog-cli": "1.1.1",
     "conventional-github-releaser": "1.1.2",
@@ -100,7 +101,7 @@
     "source-map-loader": "0.1.5",
     "systemjs-builder": "0.15.15",
     "ts-loader": "0.8.2",
-    "tslint-config-valorsoft": "1.0.1",
+    "tslint-config-valorsoft": "1.0.2",
     "typescript": "1.8.10",
     "typings": "0.8.1",
     "webpack": "1.13.0",

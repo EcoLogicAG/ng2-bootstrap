@@ -1,3 +1,14 @@
+<a name="1.0.15"></a>
+## [1.0.15](https://github.com/valor-software/ng2-bootstrap/compare/v1.0.14...v1.0.15) (2016-04-28)
+
+
+### Bug Fixes
+
+* **buttons:** had incorrect import statement which breaks .d.ts and import ([67ee5b5](https://github.com/valor-software/ng2-bootstrap/commit/67ee5b5))
+* **universal:** now plays well with ng2 universal ([9d595d3](https://github.com/valor-software/ng2-bootstrap/commit/9d595d3)), closes [#61](https://github.com/valor-software/ng2-bootstrap/issues/61)
+
+
+
 <a name="1.0.14"></a>
 ## [1.0.14](https://github.com/valor-software/ng2-bootstrap/compare/v1.0.13...v1.0.14) (2016-04-26)
 
@@ -15,7 +26,33 @@
 * **package:** updated angular2 to 0-beta.16 ([75b3568](https://github.com/valor-software/ng2-bootstrap/commit/75b3568))
 * **typeahead:** show list of options on focuse when minLength=0 ([f1c1909](https://github.com/valor-software/ng2-bootstrap/commit/f1c1909)), closes [#187](https://github.com/valor-software/ng2-bootstrap/issues/187) [#413](https://github.com/valor-software/ng2-bootstrap/issues/413)
 
+### Breaking changes
+All components was renamed accordingly to ng2 style guide ([da131ea](https://github.com/valor-software/ng2-bootstrap/commit/da131ea))
 
+| Before | After |
+|---|---|
+|Accordion|AccordionComponent|
+|AccordionPanel|AccordionPanelComponent|
+|Alert|AlertComponent|
+|ButtonCheckbox|ButtonCheckboxDirective|
+|ButtonRadio|ButtonRadioDirective|
+|Carousel|CarouselComponent|
+|Slide|SlideComponent|
+|Collapse|CollapseDirective|
+|DatePicker|DatePickerComponent|
+|Dropdown|DropdownDirective|
+|Pager|PagerComponent|
+|Pagination|PaginationComponent|
+|Bar|BarComponent|
+|Progress|ProgressDirective|
+|Progressbar|ProgressbarComponent|
+|Rating|RatingComponent|
+|Tab|TabDirective|
+|TabHeading|TabHeadingDirective|
+|Tabset|TabsetComponent|
+|Timepicker|TimepickerComponent|
+|Tooltip|TooltipDirective|
+|Typeahead|TypeaheadDirective|
 
 <a name="1.0.13"></a>
 ## [1.0.13](https://github.com/valor-software/ng2-bootstrap/compare/v1.0.12...v1.0.13) (2016-04-15)
